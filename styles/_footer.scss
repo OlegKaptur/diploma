@@ -1,0 +1,113 @@
+.footer {
+
+    &-container {
+        padding: 71px 0 67px;
+        background-color: #353C65;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 370px));
+        justify-items: center;
+        justify-content: center;
+        gap: 70px 30px;
+        text-align: center;
+
+        @include tablet() {
+            padding: 47px 20px;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+        }
+
+        @include mobile() {
+            padding: 34px 20px;
+        }
+    }
+
+    &-container__social {
+
+        img:not(:last-of-type) {
+            margin-top: 49px;
+            margin-right: 26px;
+
+            @include tablet() {
+                margin-right: 23px;
+            }
+
+            @include mobile() {
+                margin-top: 37px;
+                margin-right: 17px;
+            }
+
+        }
+
+        img {
+            @include tablet() {
+                width: 33px;
+                height: auto;
+            }
+
+            @include mobile() {
+                width: 33px;
+                height: auto;
+            }
+        }
+    }
+
+    &-container__title {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $colorWhite;
+
+        @include tablet() {
+            font-size: 14px;
+        }
+
+        @include mobile() {
+            font-size: 14px;
+        }
+
+    }
+
+    &-container__text {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 29px;
+        color: $colorWhite;
+
+        @include tablet() {
+            font-size: 14px;
+        }
+
+        @include mobile() {
+            font-size: 14px;
+        }
+
+    }
+
+    .copyright {
+        padding: 24px 20px;
+        background-color: #2C3154;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+
+        @include mobile() {
+            padding: 29px 20px;
+        }
+
+        h5 {
+            color: #808080;
+            font-size: 18px;
+            font-weight: 400;
+
+            @include mobile() {
+                font-size: 14px;
+            }
+
+            .colortext {
+                color: $colorWhite;
+            }
+        }
+    }
+}

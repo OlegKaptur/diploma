@@ -1,0 +1,93 @@
+.team {
+    @include container;
+
+    &-container {
+        @include flex-center;
+        margin: 115px auto;
+
+        &__items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(227px, 1fr));
+            gap: 30px;
+
+            @include tablet() {
+                gap: 25px;
+            }
+
+            @include mobile() {
+                gap: 50px;
+                max-width: 280px;
+                height: auto;
+            }
+
+            article {
+                text-align: start;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            h3 {
+                font-size: 24px;
+                font-weight: 700;
+                margin: 30px 0 5px;
+
+                @include tablet() {
+                    font-size: 18px;
+                    margin: 25px 0 5px;
+                }
+
+                @include mobile() {
+                    font-size: 18px;
+                    margin: 25px 0 5px;
+                }
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: 400;
+                color: $colorRed;
+                text-transform: uppercase;
+
+                @include tablet() {
+                    font-size: 14px;
+                }
+
+                @include mobile() {
+                    font-size: 14px;
+                }
+            }
+
+            h5 {
+                font-size: 18px;
+                font-weight: 400;
+                color: #6C7279;
+                margin: 18px 0 38px;
+
+                @include tablet() {
+                    font-size: 14px;
+                    margin: 22px 0 39px;
+                }
+
+                @include mobile() {
+                    font-size: 14px;
+                    margin: 38px 0 55px;
+                }
+            }
+        }
+
+        &__icon {
+            img {
+                width: 39px;
+                height: auto;
+
+                @include tablet() {
+                    width: 33px;
+                }
+            }
+        }
+
+    }
+}

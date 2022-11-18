@@ -1,0 +1,81 @@
+.features-container {
+    @include container;
+
+    .features-subcontainer {
+        padding: 113px 10px 133px;
+
+        @include tablet() {
+            padding: 78px 0 80px;
+        }
+
+        @include mobile() {
+            padding: 58px 0 35px;
+        }
+    }
+
+    .features-subcontainer__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 88px 30px;
+
+        @include tablet() {
+            gap: 78px 20px;
+        }
+
+        @include mobile() {
+            gap: 41px;
+        }
+
+        article {
+            text-align: center;
+
+            @include mobile() {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            img {
+
+                @include tablet() {
+                    width: 85px;
+                    height: auto;
+                }
+
+                @include mobile() {
+                    width: 75px;
+                    height: auto;
+                }
+            }
+
+            h4 {
+                font-size: 24px;
+                font-weight: 900;
+                margin: 29px 0 20px;
+                text-transform: uppercase;
+
+                @include tablet() {
+                    font-size: 18px;
+                    margin: 24px 0 4px;
+                }
+
+                @include mobile() {
+                    font-size: 18px;
+                    margin: 21px 0 0;
+                }
+            }
+
+            h5 {
+                font-size: 18px;
+                font-weight: 400;
+
+                @include tablet() {
+                    font-size: 14px;
+                }
+
+                @include mobile() {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.testimonials {
+    &__slider {
+        &__item {
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background-color: #5C3249;
+
+            .w50 {
+                width: 50%;
+
+                @include mobile() {
+                    width: 100%;
+                }
+            }
+
+            .image-container {
+                line-height: 0;
+            }
+
+            .text-container {
+                padding: 20px;
+                max-width: 430px;
+                margin: 0 auto;
+
+
+                @include mobile() {
+                    padding-bottom: 95px;
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+
+            h2 {
+                font-family: Cardo, sans-serif;
+                font-style: italic;
+                color: $colorWhite;
+                font-size: 36px;
+                font-weight: 400;
+                text-transform: capitalize;
+
+                @include tablet() {
+                    font-size: 24px;
+                }
+
+                @include mobile() {
+                    font-size: 24px;
+                }
+            }
+
+            h6 {
+                color: $colorWhite;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                
+                @include tablet() {
+                    font-size: 12px;
+                }
+
+                @include mobile() {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &__actions {
+            @include flex-center;
+            flex-direction: row;
+            padding: 0;
+            margin: 31px 0 0;
+
+            @include tablet() {
+                margin: 24px 0 0;
+            }
+
+            @include mobile() {
+                margin: 23px 0 0;
+            }
+
+            li {
+                list-style: none;
+
+                &:not(:first-child) {
+                    margin-left: 25px;
+        
+                    @include mobile() {
+                        margin-left: 21px;
+                    }
+                }
+            }
+
+            button {
+                @include resetButton();
+                height: 14px;
+                width: 14px;
+                border-radius: 100%;
+                border: 1px solid #7E5D6F;
+                font-size: 0;
+                line-height: 0;
+
+                @include tablet() {
+                    height: 10px;
+                    width: 10px;
+                }
+
+                @include mobile() {
+                    height: 10px;
+                    width: 10px;
+                }
+
+                &.active {
+                    background: #7E5D6F;
+                }
+            }
+        }
+    }
+}

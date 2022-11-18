@@ -1,0 +1,228 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #BABBC5;
+        @include container;
+
+        img {
+            @include tablet() {
+                width: 231px;
+                height: 100px;
+            }
+
+            @include mobile() {
+                width: 130px;
+            }
+        }
+
+        @include tablet() {
+            max-width: 984px;
+        }
+
+        @include mobile() {
+            border-bottom: none;
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+
+        @include mobile() {
+            display: none;
+        }
+
+        a {
+            height: 100%;
+            padding: 0 27px;
+            font-size: 13px;
+            font-weight: 700;
+            @include flex-center;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $colorWhite;
+            white-space: nowrap;
+            position: relative;
+
+            @include tablet() {
+                font-size: 12px;
+                padding: 0 20px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: #BABBC5;
+                opacity: 0;
+            }
+
+            &.active {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &:active {
+                color: #E71414;
+
+                &::before {
+                    opacity: 1;
+                    background-color: #E71414;
+                }
+            }
+        }
+    }
+
+    .togle {
+        @include resetButton();
+        display: none;
+
+        img {
+
+            @include mobile() {
+                width: 56px;
+                width: 56px;
+            }
+        }
+
+        @include mobile() {
+            display: block;
+        }
+    }
+}
+
+.banner {
+    min-height: 100vh;
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    padding-bottom: 20px;
+
+    @include mobile() {
+        min-height: 100%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(37, 43, 73, .8);
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        min-height: 747px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include container;
+
+        @include mobile() {
+            min-height: 574px;
+        }
+    }
+
+    h1 {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 64px;
+        color: $colorWhite;
+        margin-top: 130px;
+
+        @include tablet() {
+            font-size: 48px;
+            margin-top: 157px;
+        }
+
+        @include mobile() {
+            font-size: 36px;
+            margin-top: 69px;
+        }
+    }
+
+    h5 {
+        font-weight: 400;
+        font-size: 24px;
+        color: $colorWhite;
+        margin: 32px auto 82px;
+
+        @include tablet() {
+            font-size: 18px;
+            margin: 62px auto 90px;
+        }
+
+        @include mobile() {
+            font-size: 14px;
+            margin: 33px auto 50px;
+        }
+    }
+
+    button {
+        width: 370px;
+        height: 80px;
+        background: none;
+        border: $colorRed;
+        font-weight: 900;
+        font-size: 24px;
+        color: $colorWhite;
+        background: $colorRed;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @include tablet() {
+            width: 313px;
+            height: 78px;
+        }
+
+        @include mobile() {
+            width: 280px;
+            height: 58px;
+        }
+
+        &:hover {
+            background-color: #E71414;
+        }
+
+        &:active {
+            background-color: $colorRed;
+            box-shadow: 4px 4px 30px $colorRed;
+        }
+    }
+}

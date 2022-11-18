@@ -1,0 +1,84 @@
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include mobile() {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .image {
+        position: relative;
+        border: 2px solid $colorWhite;
+        box-sizing: border-box;
+
+        figure {
+            line-height: 0;
+        }
+
+        &:hover {
+            .image__description {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+
+        &:active {
+            .image__description {
+                opacity: 1;
+                background-color: rgba(185, 12, 12, 0.8);
+                border: 2px solid $colorWhite;
+                cursor: pointer;
+            }
+        }
+
+        &__description {
+            position: absolute;
+            background-color: rgba(255, 67, 67, 0.8);
+            color: $colorWhite;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            opacity: 0;
+            @include flex-center;
+            flex-direction: column;
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0 0 21px;
+            text-transform: uppercase;
+            color: $colorWhite;
+
+            @include tablet() {
+                font-size: 18px;
+                margin: 0 0 13px;
+            }
+
+            @include mobile() {
+                font-size: 18px;
+                margin: 0 0 5px;
+            }
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            color: $colorWhite;
+
+            @include tablet() {
+                font-size: 14px;
+            }
+
+            @include mobile() {
+                font-size: 14px;
+            }
+        }
+    }
+}
